@@ -7,20 +7,29 @@
  */
 int main(void)
 {
+	long int n, max, i;
 
-unsigned int long n = 612852475143, a = (int) sqrt(n);
+	max = -1;
+	n = 612852475143;
 
-while (1)
-{
-
-	if (n % a == 0)
+	while (n % 2 == 0)
 	{
-		printf("%lu \n", n / a);
-		break;
+		max = 2;
+		n = n / 2;
 	}
-	a--;
-
+	for (i = 3; i <= n / 2; i = i + 2)
+	{
+		while (n % i == 0)
+		{
+			max = i;
+			n = n / i;
+		}
+	}
+	if (n > 2)
+	{
+		max = n;
+	}
+	printf("%ld\n", max);
+	return (0);
 }
 
-return (0);
-}
