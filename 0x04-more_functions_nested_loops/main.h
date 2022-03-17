@@ -18,4 +18,4 @@ void print_diagonal(int n);
 
 void print_square(int size);
 
-void print_trianvle(int size);
+void print_triangle(int size);
